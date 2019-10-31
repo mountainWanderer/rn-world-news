@@ -25,7 +25,6 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 
 
@@ -184,4 +183,4 @@ Project Link: [https://github.com/github_username/repo](https://github.com/githu
 [issues-url]: https://github.com/mountainWanderer/rn-world-news/issues
 [license-shield]: https://img.shields.io/github/license/mountainWanderer/rn-world-news
 [license-url]: https://github.com/mountainWanderer/rn-world-news/blob/master/LICENSE.txt
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: readme/live.png
