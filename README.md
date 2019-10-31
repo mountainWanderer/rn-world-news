@@ -78,7 +78,7 @@
 
 Here's a blank template to get started:
 **To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`github_username`, `repo`, `twitter_handle`, `email`
+`mountainWanderer`, `rn-world-news`, `twitter_handle`, `email`
 
 
 ### Built With
@@ -127,7 +127,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/github_username/repo/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/mountainWanderer/rn-world-news/issues) for a list of proposed features (and known issues).
 
 
 
@@ -156,7 +156,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
 
-Project Link: [https://github.com/github_username/repo](https://github.com/github_username/repo)
+Project Link: [https://github.com/mountainWanderer/rn-world-news](https://github.com/mountainWanderer/rn-world-news)
 
 
 
