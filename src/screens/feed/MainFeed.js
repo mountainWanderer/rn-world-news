@@ -19,8 +19,7 @@ const renderCards = ({newsData = []}) => {
     ))
 }
 
-/* export default function MainFeed() { */
-const MainFeed = () => {
+const MainFeed = ({globalState, gnFeed}) => {
 
     const [newsData, setNewsData] = useState([
         { title: 'News number one' },
@@ -48,8 +47,9 @@ const styles = StyleSheet.create({
     }
 })
 
-const mapStateToProps = (state) => ({
-    gnFeed: state.gnFeed
+const mapStateToProps = ({globalState, gnFeed}) => ({
+    globalState,
+    gnFeed
 })
 
 export default connect(
