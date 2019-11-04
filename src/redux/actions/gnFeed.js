@@ -4,14 +4,14 @@ const fetchFeed = dispatch => {
     dispatch({type: 'FETCHING_DATA_GNFEED'})
     return axios.get('/everything', {
             params: {
-                sources: 'corriere',
+                qInTitle: '"ciclabile" OR "cycle path" OR "ciclopista" OR "fietspad"',
                 sortBy: 'publishedAt'
             }
         })
         .then(res => {
             dispatch({
                 type: 'FETCHING_DATA_GNFEED_SUCCESS',
-                payload: res.data
+                payload: res.data.articles
             })
         })
         .catch(err => {

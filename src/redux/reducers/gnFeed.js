@@ -21,8 +21,7 @@ export default gnFeed = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 isFetching: false,
-                data: action.payload.data,
-                meta: action.payload.meta,
+                data: action.payload,
                 hasError: false,
                 errorMessage: null
             };
