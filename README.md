@@ -163,9 +163,7 @@ Project Link: [https://github.com/mountainWanderer/rn-world-news](https://github
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* []()
-* []()
-* []()
+* ```https://itnext.io/how-to-use-redux-with-react-hooks-5422a7ceae6e``` for simply and great walkthrough to learn use of React Hooks.
 
 
 
