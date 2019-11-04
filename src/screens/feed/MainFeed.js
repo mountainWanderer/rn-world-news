@@ -18,9 +18,23 @@ import {
 } from '../../redux/actions/gnFeed'
 
 const renderCards = ({articles = []}) => {
-    return articles.map( (news = {}) => (
-        <BaseCard key={'foo'} data={{ title: news['title'] }}/>
-    ))
+    return articles.map( (article = {}) => {
+
+        let {
+            title,
+            url,
+            urlToImage: imageUrl,
+            publishedAt: date,
+            content
+        } = article
+
+        return (
+            <BaseCard
+                key={'foo'}
+                data={{ title, url, imageUrl, date, content }}
+            />
+        )
+    })
 }
 
 export default function MainFeed() {

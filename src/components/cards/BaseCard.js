@@ -1,39 +1,92 @@
 import React from 'react'
 import {
     View,
-    Text
+    Text,
+    StyleSheet,
+    Image
 } from 'react-native'
 
 const BaseCard = ({ data = {} }) => {
 
     let {
-        title = ''
+        title = '',
+        url: linkUrl,
+        imageUrl = '',
+        date,
+        content = ''
     } = data
 
     return (
-        <View
-            style={{
-                marginHorizontal: 20,
-                marginVertical: 10,
-                minHeight: 120,
-                backgroundColor: '#424242',
-                paddingVertical: 10,
-                paddingHorizontal: 10,
-                borderRadius: 5,
-                //shadow
-                shadowColor: "#000",
-                shadowOffset: {
-                    width: 0,
-                    height: 2,
-                },
-                shadowOpacity: 0.25,
-                shadowRadius: 3.84,
-                elevation: 5,
-            }}
-        >
-            <Text style={{ color: '#ECEFF1' }}>{title}</Text>
+        <View style={{ ...componentStyles.outher }}>
+            <Text style={{ ...componentStyles.title }}>{title}</Text>
+            {
+                imageUrl !== '' &&
+                <Image
+                    source={{uri: imageUrl}}
+                    style={{ ...componentStyles.image }}
+                    resizeMode={"cover"}
+                />
+            }
+            <Text style={{ ...componentStyles.content }}>{content}</Text>
+            <View style={{ ...componentStyles.footer }}>
+                <Text style={{ ...componentStyles.footerLabels }}>{date}</Text>
+            </View>
         </View>
     )
 }
+
+const componentStyles = StyleSheet.create({
+    outher: {
+        marginHorizontal: 15,
+        marginVertical: 10,
+        minHeight: 120,
+        backgroundColor: '#424242',
+        paddingTop: 10,
+        borderRadius: 10,
+        //shadow
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5
+    },
+    title: {
+        color: '#ECEFF1',
+        fontSize: 20,
+        fontWeight: '500',
+        marginTop: 5,
+        marginBottom: 15,
+        marginHorizontal: 10
+    },
+    image: {
+        width: '100%',
+        height: 250,
+        backgroundColor: 'gray'
+    },
+    content: {
+        color: '#ECEFF1',
+        fontSize: 16,
+        marginVertical: 15,
+        marginHorizontal: 10,
+        textAlign: 'justify'
+    },
+    footer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        height: 25,
+        backgroundColor: '#BDBDBD',
+        borderTopColor: '#FAFAFA',
+        borderTopWidth: 1,
+        borderBottomLeftRadius: 10,
+        borderBottomRightRadius: 10,
+        paddingHorizontal: 10
+    },
+    footerLabels: {
+        color: '#212121'
+    }
+})
 
 export default BaseCard
