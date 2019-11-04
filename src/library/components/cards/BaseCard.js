@@ -6,9 +6,24 @@ import {
     Image
 } from 'react-native'
 
+import moment from 'moment'
 import R from '../../../res/R'
 
-const BaseCard = ({ data = {} }) => {
+import {
+    BaseTag
+} from '../'
+
+const generateTags = (tags = []) => tags.map( ( tag = {} ) => {
+    return (
+        <BaseTag
+            key={''}
+            text={tag['text']}
+            color={tag['color']}
+        />
+    )
+})
+
+const BaseCard = ({ data = {}, tags = [] }) => {
 
     let {
         title = '',
@@ -17,6 +32,14 @@ const BaseCard = ({ data = {} }) => {
         date,
         content = ''
     } = data
+
+    moment.locale('it')
+    let itemTimeFromNow = moment(date).fromNow()
+
+    tags.push({
+        text: 'NEW',
+        color: R.colors.shared.red
+    })
 
     return (
         <View style={{ ...componentStyles.outher }}>
@@ -31,7 +54,13 @@ const BaseCard = ({ data = {} }) => {
             }
             <Text style={{ ...componentStyles.content }}>{content}</Text>
             <View style={{ ...componentStyles.footer }}>
-                <Text style={{ ...componentStyles.footerLabels }}>{date}</Text>
+                {generateTags(tags)}
+                <Text style={{
+                    ...componentStyles.footerLabels,
+                    marginLeft: 5
+                }}>
+                    {itemTimeFromNow}
+                </Text>
             </View>
         </View>
     )
@@ -78,7 +107,8 @@ const componentStyles = StyleSheet.create({
     footer: {
         flexDirection: 'row',
         alignItems: 'center',
-        height: 25,
+        justifyContent: 'flex-end',
+        height: 45,
         backgroundColor: '#BDBDBD',
         borderTopColor: '#FAFAFA',
         borderTopWidth: 1,
@@ -87,7 +117,8 @@ const componentStyles = StyleSheet.create({
         paddingHorizontal: 10
     },
     footerLabels: {
-        color: '#212121'
+        color: '#212121',
+        fontWeight: '600'
     }
 })
 
