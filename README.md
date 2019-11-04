@@ -164,6 +164,7 @@ Project Link: [https://github.com/mountainWanderer/rn-world-news](https://github
 ## Acknowledgements
 
 * ```https://itnext.io/how-to-use-redux-with-react-hooks-5422a7ceae6e``` for simply and great walkthrough to learn use of React Hooks.
+* ```[https://www.freecodecamp.org/news/how-to-structure-your-project-and-manage-static-resources-in-react-native-6f4cfc947d92/]``` for very well done guide. How to structure your project and manage static resources in React Native.
 
 
 
