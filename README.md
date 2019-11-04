@@ -163,9 +163,7 @@ Project Link: [https://github.com/mountainWanderer/rn-world-news](https://github
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* []()
-* []()
-* []()
+* ```[https://www.freecodecamp.org/news/how-to-structure-your-project-and-manage-static-resources-in-react-native-6f4cfc947d92/]``` for very well done guide. How to structure your project and manage static resources in React Native.
 
 
 
