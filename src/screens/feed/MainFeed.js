@@ -4,14 +4,13 @@ import {
     ScrollView
 } from 'react-native'
 import {
-    connect,
     useSelector,
     useDispatch
 } from 'react-redux'
 
 import {
     BaseCard
-} from '../../components'
+} from '../../library/components'
 
 import {
     fetchFeed

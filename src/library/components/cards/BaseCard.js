@@ -6,6 +6,8 @@ import {
     Image
 } from 'react-native'
 
+import R from '../../../res/R'
+
 const BaseCard = ({ data = {} }) => {
 
     let {
@@ -40,7 +42,7 @@ const componentStyles = StyleSheet.create({
         marginHorizontal: 15,
         marginVertical: 10,
         minHeight: 120,
-        backgroundColor: '#424242',
+        backgroundColor: R.colors.dark.card.background,
         paddingTop: 10,
         borderRadius: 10,
         //shadow
