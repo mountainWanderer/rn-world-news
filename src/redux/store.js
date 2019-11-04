@@ -5,8 +5,7 @@ import {
 } from 'redux'
 import thunk from 'redux-thunk'
 /* import { createReactNavigationReduxMiddleware } from 'react-navigation-redux-helpers' */
-import { saveAuthToken } from '../config/axios'
-import mainReducer from './reducers/mainReducer'
+import mainReducer from './reducers'
 
 /* const rootSwitchNavigatorMiddleware = createReactNavigationReduxMiddleware(
     state => state.rootSwitchNav,
@@ -15,7 +14,7 @@ import mainReducer from './reducers/mainReducer'
 
 const middleware = [thunk, rootSwitchNavigatorMiddleware, saveAuthToken]; */
 
-const middleware = [thunk, saveAuthToken]
+const middleware = [thunk]
 
 const composeEnhancers =
     typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
