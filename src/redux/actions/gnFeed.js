@@ -1,4 +1,6 @@
 import axios from "../../config/axios";
+import { normalize } from 'normalizr'
+import { article } from '../schemas/article'
 
 const fetchFeed = dispatch => {
     dispatch({type: 'FETCHING_DATA_GNFEED'})
@@ -9,6 +11,8 @@ const fetchFeed = dispatch => {
             }
         })
         .then(res => {
+            let normalizedArticles = normalize(res.data.articles, [article])
+            console.log(normalizedArticles);
             dispatch({
                 type: 'FETCHING_DATA_GNFEED_SUCCESS',
                 payload: res.data.articles
