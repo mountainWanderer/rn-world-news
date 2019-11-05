@@ -9,6 +9,9 @@ const fetchFeed = dispatch => {
             }
         })
         .then(res => {
+            /**
+             * TODO: Here will insert the latest viewed news
+             */
             dispatch({
                 type: 'FETCHING_DATA_GNFEED_SUCCESS',
                 payload: res.data.articles
