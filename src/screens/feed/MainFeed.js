@@ -24,13 +24,14 @@ const renderCards = ({articles = []}) => {
             url,
             urlToImage: imageUrl,
             publishedAt: date,
+            source,
             content
         } = article
 
         return (
             <BaseCard
                 key={'foo'}
-                data={{ title, url, imageUrl, date, content }}
+                data={{ title, url, imageUrl, date, source, content }}
             />
         )
     })
