@@ -4,29 +4,44 @@ import {
     ScrollView
 } from 'react-native'
 import {
-    connect,
     useSelector,
     useDispatch
 } from 'react-redux'
 
 import {
     BaseCard
-} from '../../components'
+} from '../../library/components'
 
 import {
     fetchFeed
 } from '../../redux/actions/gnFeed'
 
-const renderCards = ({articles = []}) => {
-    return articles.map( (news = {}) => (
-        <BaseCard key={'foo'} data={{ title: news['title'] }}/>
-    ))
+const renderCards = ({articlesStore = {}, articles = []}) => {
+    return articles.map( (idArticle) => {
+
+        let {
+            title,
+            url,
+            urlToImage: imageUrl,
+            publishedAt: date,
+            source,
+            content
+        } = articlesStore[idArticle]
+
+        return (
+            <BaseCard
+                key={idArticle}
+                data={{ title, url, imageUrl, date, source, content }}
+            />
+        )
+    })
 }
 
 export default function MainFeed() {
 
     const globalState = useSelector(state => state.globalState)
     const gnFeed = useSelector(state => state.gnFeed)
+    const articlesStore = useSelector(state => state.articles)
 
     const dispatch = useDispatch()
 
@@ -43,7 +58,7 @@ export default function MainFeed() {
             contentInsetAdjustmentBehavior="automatic"
             style={styles.scrollView}
         >
-            {renderCards({articles: gnFeed['data']})}
+            {renderCards({articlesStore, articles: gnFeed['data']})}
         </ScrollView>
     )
 }
