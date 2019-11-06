@@ -21,11 +21,9 @@ const fetchFeed = dispatch => {
                 payload: normalizedArticles.entities.sources
             })
 
-            normalizedArticles.result
-
             dispatch({
                 type: 'FETCHING_DATA_GNFEED_SUCCESS',
-                payload: res.data.articles
+                payload: normalizedArticles.result
             })
         })
         .catch(err => {
