@@ -15,8 +15,8 @@ const article = new schema.Entity(
              * API doesn't have ID field
              */
             let dateAndUrl = `${value['publishedAt']}-${value['url']}`
-            let hashedDateAndUrl = dateAndUrl
-            //TODO trasform string in hash
+            let hashedDateAndUrl = sha1(dateAndUrl)
+            
             return hashedDateAndUrl
         },
         mergeStrategy: (entityA, entityB) => ({
