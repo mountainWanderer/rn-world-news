@@ -31,12 +31,8 @@ const BaseCard = ({ data = {}, tags = [] }) => {
         imageUrl = '',
         date,
         content = '',
-        source = {}
+        source: newsPaper = ''
     } = data
-
-    let {
-        name: newsPaper = ''
-    } = source
 
     moment.locale('it')
     let itemTimeFromNow = moment(date).fromNow()
