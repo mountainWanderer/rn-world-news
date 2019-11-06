@@ -38,7 +38,7 @@ const BaseCard = ({ data = {}, tags = [] }) => {
 
     tags.push({
         text: 'NEW',
-        color: R.colors.shared.red
+        color: R.colors.shared.fucsia
     })
 
     return (
