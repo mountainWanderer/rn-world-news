@@ -16,21 +16,22 @@ import {
     fetchFeed
 } from '../../redux/actions/gnFeed'
 
-const renderCards = ({articles = []}) => {
-    return articles.map( (article = {}) => {
+const renderCards = ({articlesStore = {}, articles = []}) => {
+    return articles.map( (idArticle) => {
 
         let {
             title,
             url,
             urlToImage: imageUrl,
             publishedAt: date,
+            source,
             content
-        } = article
+        } = articlesStore[idArticle]
 
         return (
             <BaseCard
-                key={'foo'}
-                data={{ title, url, imageUrl, date, content }}
+                key={idArticle}
+                data={{ title, url, imageUrl, date, source, content }}
             />
         )
     })
@@ -40,6 +41,7 @@ export default function MainFeed() {
 
     const globalState = useSelector(state => state.globalState)
     const gnFeed = useSelector(state => state.gnFeed)
+    const articlesStore = useSelector(state => state.articles)
 
     const dispatch = useDispatch()
 
@@ -56,7 +58,7 @@ export default function MainFeed() {
             contentInsetAdjustmentBehavior="automatic"
             style={styles.scrollView}
         >
-            {renderCards({articles: gnFeed['data']})}
+            {renderCards({articlesStore, articles: gnFeed['data']})}
         </ScrollView>
     )
 }

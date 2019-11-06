@@ -30,8 +30,13 @@ const BaseCard = ({ data = {}, tags = [] }) => {
         url: linkUrl,
         imageUrl = '',
         date,
-        content = ''
+        content = '',
+        source = {}
     } = data
+
+    let {
+        name: newsPaper = ''
+    } = source
 
     moment.locale('it')
     let itemTimeFromNow = moment(date).fromNow()
@@ -54,10 +59,15 @@ const BaseCard = ({ data = {}, tags = [] }) => {
             }
             <Text style={{ ...componentStyles.content }}>{content}</Text>
             <View style={{ ...componentStyles.footer }}>
-                {generateTags(tags)}
                 <Text style={{
                     ...componentStyles.footerLabels,
-                    marginLeft: 5
+                    flex: 1,
+                }}>
+                    {newsPaper}
+                </Text>
+                {generateTags(tags)}
+                <Text style={{
+                    ...componentStyles.footerLabels
                 }}>
                     {itemTimeFromNow}
                 </Text>
@@ -114,7 +124,7 @@ const componentStyles = StyleSheet.create({
         borderTopWidth: 1,
         borderBottomLeftRadius: 10,
         borderBottomRightRadius: 10,
-        paddingHorizontal: 10
+        paddingHorizontal: 15
     },
     footerLabels: {
         color: '#212121',
