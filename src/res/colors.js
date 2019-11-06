@@ -1,7 +1,8 @@
 const colors = {
     shared: {
         primary: 'purple',
-        red: '#ff6f61'
+        red: '#ff6f61',
+        fucsia: '#ef0078'
     },
     light: {
         card: {

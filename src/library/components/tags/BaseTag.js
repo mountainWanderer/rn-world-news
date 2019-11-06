@@ -5,6 +5,8 @@ import {
     StyleSheet,
     Image
 } from 'react-native'
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { faCoffee, faStar } from '@fortawesome/free-solid-svg-icons'
 
 import R from '../../../res/R'
 
@@ -15,6 +17,7 @@ const BaseTag = ({ text = {}, color = 'black', outherStyle = {} }) => {
             borderColor: color,
             ...outherStyle
         }}>
+            <FontAwesomeIcon icon={faCoffee} color={color} style={{marginRight: 5}} />
             <Text style={{
                 ...componentStyles.text,
                 color
