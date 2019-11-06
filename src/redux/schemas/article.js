@@ -21,8 +21,7 @@ const article = new schema.Entity(
         },
         mergeStrategy: (entityA, entityB) => ({
             ...entityA,
-            ...entityB,
-            newsPaper: entityB.name
+            ...entityB
         }),
         processStrategy: (value, parent, key) => {
             let obj = Object.assign({}, value)
